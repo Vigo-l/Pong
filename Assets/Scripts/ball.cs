@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ball : MonoBehaviour
 {
-    public float Xposition = 0f;
-    public float Yposition = 0f;
+    public float Xposition = 1f;
+    public float Yposition = 1f;
     public float xSpeed;
     public float ySpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        xSpeed = 5f;
-        ySpeed = 5f;
+        xSpeed = 2f;
+        ySpeed = 2f;
     }
 
     // Update is called once per frame
@@ -35,11 +35,6 @@ public class ball : MonoBehaviour
         {
             xSpeed = xSpeed * -1;
             Debug.Log("raakt vertical aan");
-        }
-        if (collision.gameObject.CompareTag("verticalWall2"))
-        {
-            ySpeed = ySpeed * -1;
-            Debug.Log("raakt vertical2 aan");
         }
     }
 }
