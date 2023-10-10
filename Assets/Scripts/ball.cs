@@ -37,5 +37,17 @@ public class ball : MonoBehaviour
             xSpeed = xSpeed * -1;
             Debug.Log("raakt vertical aan");
         }
+        if (collision.gameObject.CompareTag("paddleLeft"))
+        {
+            xSpeed = xSpeed * -1;
+            ySpeed += ySpeed + 1;
+            Debug.Log("raakt horizontal aan");
+        }
+        if (collision.gameObject.CompareTag("paddleRight"))
+        {
+            xSpeed = xSpeed * -1;
+            ySpeed += ySpeed + 1;
+            Debug.Log("raakt vertical aan");
+        }
     }
 }
