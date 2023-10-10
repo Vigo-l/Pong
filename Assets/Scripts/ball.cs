@@ -14,8 +14,11 @@ public class ball : MonoBehaviour
     void Start()
     {
         xSpeed = 2f;
+        xSpeed = Random.Range(-20f, 20f);
+        ySpeed = Random.Range(-20f, 20f);
         ySpeed = 2f;
     }
+
 
     // Update is called once per frame
     void Update()
@@ -35,6 +38,11 @@ public class ball : MonoBehaviour
         if (collision.gameObject.CompareTag("verticalWall"))
         {
             xSpeed = xSpeed * -1;
+            Xposition = xSpeed * Time.deltaTime;
+            Yposition = xSpeed * Time.deltaTime;
+            xSpeed = Random.Range(-20f, 20f);
+        ySpeed = Random.Range(-20f, 20f);
+
             Debug.Log("raakt vertical aan");
         }
         if (collision.gameObject.CompareTag("paddleLeft"))
