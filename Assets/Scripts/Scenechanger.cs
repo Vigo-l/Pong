@@ -5,7 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Scenechanger : MonoBehaviour
 {
-    public string sceneName;
+    public void startOnePlayer()
+    {
+        SceneManager.LoadScene("Assignment1");
+    }
+    public void startTwoPlayer()
+    {
+        SceneManager.LoadScene("Assignment2");
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +23,5 @@ public class Scenechanger : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void changeScene()
-    {
-        SceneManager.LoadScene(sceneName);
     }
 }
