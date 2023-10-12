@@ -53,14 +53,14 @@ public class ball : MonoBehaviour
         transform.position = new Vector3(Xposition, Yposition, 0);
         if (leftScore >= topScore)
         {
-            scoreField.text = "left player has won i have a tia";
+            scoreField.text = "Left player has won i have a tia";
             xSpeed = 0f;
             ySpeed = 0f;
             Yposition = 0f;
             Yposition = 0f;
         } else if(rightScore >= topScore)
         {
-            scoreField.text = "left player has won i have a tia";
+            scoreField.text = "Right player has won i have a tia";
         } 
     }
 
@@ -85,6 +85,7 @@ public class ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             xSpeed = xSpeed * -1.5f;
+            
         }
     }
 }
