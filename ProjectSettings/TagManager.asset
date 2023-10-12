@@ -6,9 +6,10 @@ TagManager:
   tags:
   - horizontalwall
   - verticalWall
-  - verticalWall2
   - paddleLeft
   - paddleRight
+  - leftWall
+  - rightWall
   layers:
   - Default
   - TransparentFX
@@ -41,7 +42,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - background
   m_SortingLayers:
   - name: Default
     uniqueID: 0
