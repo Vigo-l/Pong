@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Scenechanger : MonoBehaviour
+public class buttonScript : MonoBehaviour
 {
     public void startOnePlayer()
     {
@@ -12,16 +12,5 @@ public class Scenechanger : MonoBehaviour
     public void startTwoPlayer()
     {
         SceneManager.LoadScene("Assignment2");
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
