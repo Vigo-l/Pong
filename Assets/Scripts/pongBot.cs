@@ -19,7 +19,7 @@ public class pongBot : MonoBehaviour
         
         yPosition = yPosition + ySpeed * Time.deltaTime;
         transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
-        if (yPosition >= 9.5)
+        if (yPosition >= 11.3)
         {
             ySpeed = ySpeed * -1f;
         } else if (yPosition <= -3.6f){

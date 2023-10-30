@@ -41,7 +41,7 @@ public class InputPaddle : MonoBehaviour
 
         // this is for the paddle to stay whitin the area
         float minY = -3.5f; 
-        float maxY = 9.5f; 
+        float maxY = 11.3f; 
 
         newPosition.y = Mathf.Clamp(newPosition.y, minY, maxY);
 
