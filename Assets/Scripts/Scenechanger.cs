@@ -13,4 +13,16 @@ public class buttonScript : MonoBehaviour
     {
         SceneManager.LoadScene("Assignment2");
     }
+    public void startOnePlayern()
+    {
+        SceneManager.LoadScene("Oneplayer boring");
+    }
+    public void startTwoPlayern()
+    {
+        SceneManager.LoadScene("Twoplayer boring");
+    }
+    public void home()
+    {
+        SceneManager.LoadScene("menu");
+    }
 }
