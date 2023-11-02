@@ -67,6 +67,7 @@ public class ball : MonoBehaviour
         Xposition += xSpeed * Time.deltaTime;
         Yposition += ySpeed * Time.deltaTime;
         transform.position = new Vector3(Xposition, Yposition, 0);
+        // makes it so that if the topscore is reached the game stops
         if (leftScore >= topScore)
         {
             scoreField.text = "Left player has won i have a tia";
@@ -82,11 +83,14 @@ public class ball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //makes it so that the ball bounces of walla
         if (collision.gameObject.CompareTag("horizontalwall"))
+
         {
             ySpeed = ySpeed * -1f;
             Debug.Log("raakt horizontal aan");
         }
+      // adds points to the score
         if (collision.gameObject.CompareTag("leftWall"))
         {
             rightScore++;

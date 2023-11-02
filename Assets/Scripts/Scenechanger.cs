@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class buttonScript : MonoBehaviour
 {
+   // changes the scene
     public void startOnePlayer()
     {
         SceneManager.LoadScene("Assignment1");

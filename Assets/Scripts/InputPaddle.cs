@@ -10,6 +10,7 @@ public class InputPaddle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       //makes the paddle go up
         if (leftOrRight == "left")
         {
             if (Input.GetKey(KeyCode.W))
@@ -21,6 +22,7 @@ public class InputPaddle : MonoBehaviour
                 MovePaddle(Vector3.down);
             }
         }
+       //makes the paddle go down
         else if (leftOrRight == "right")
         {
             if (Input.GetKey(KeyCode.UpArrow))
