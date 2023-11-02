@@ -7,22 +7,37 @@ using UnityEngine.UIElements;
 
 public class ball : MonoBehaviour
 {
+   /// <summary>
+   /// settings for the ball
+   /// - move in x and y directions
+   /// - change course when hitting the wall
+   /// - when ball hits the paddle it speeds up
+   /// - when it hits the left or right wall change score
+   /// - showing the score
+   /// </summary>
+    
+    // the speed and start position of the ball
     public float Xposition = 1f;
     public float Yposition = 1f;
     public float xSpeed;
     public float ySpeed;
+   // refrence to the score text
     public TMP_Text scoreField;
     private int leftScore = 0;
     private int rightScore = 0;
+   // stops the game if the score is met
     private int topScore = 10;
-    public float rotationSpeed;
-    private object scaling;
 
+   //Function for resets the ball to start position and adds the score to left or right
     private void resetBall(string leftOrRight)
     {
+        //starting positions for x and y
         Xposition = 0f;
         Yposition = 0f;
+        // displays the score in the text ield
         scoreField.text = leftScore + " - " + rightScore;
+       
+        //checks if the ball hit left or right
         if(leftOrRight == "left")
         {
             xSpeed = 3f;
@@ -38,16 +53,17 @@ public class ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // sets the ball to the start position
         transform.position = new Vector3(Xposition, Yposition, 0);
         xSpeed = 3f;
         ySpeed = 3f;
-        rotationSpeed = 10 * 360f;
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        // makes it so that the ball runs on real time and not frames so its the same speed on all devices
         Xposition += xSpeed * Time.deltaTime;
         Yposition += ySpeed * Time.deltaTime;
         transform.position = new Vector3(Xposition, Yposition, 0);
