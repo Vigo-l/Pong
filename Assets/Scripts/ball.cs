@@ -19,8 +19,13 @@ public class ball : MonoBehaviour
     // the speed and start position of the ball
     public float Xposition = 1f;
     public float Yposition = 1f;
+    public AudioSource Wallhit;
+    public AudioSource paddlehit;
+    public AudioSource score;
+    public AudioSource explosionsound;
     public float xSpeed;
     public float ySpeed;
+    public GameObject explosion;
    // refrence to the score text
     public TMP_Text scoreField;
     private int leftScore = 0;
@@ -87,25 +92,47 @@ public class ball : MonoBehaviour
         if (collision.gameObject.CompareTag("horizontalwall"))
 
         {
+            Wallhit.Play();
             ySpeed = ySpeed * -1f;
             Debug.Log("raakt horizontal aan");
         }
       // adds points to the score
         if (collision.gameObject.CompareTag("leftWall"))
         {
-            rightScore++;
-            resetBall("left");
+            StartCoroutine(explodeleft());
   
         }
         if (collision.gameObject.CompareTag("rightWall"))
         {
-            leftScore++;
-            resetBall("right");
+            StartCoroutine(exploderight());
+
         }
         if (collision.gameObject.CompareTag("Player"))
         {
+            paddlehit.Play();
             xSpeed = xSpeed * -1.5f;
             
+        }
+
+    IEnumerator exploderight()
+    {
+            explosion.SetActive(true);
+            explosionsound.Play();
+            yield return new WaitForSeconds(2.0f);
+            score.Play();
+            leftScore++;
+            explosion.SetActive(false);
+            resetBall("right");
+        }
+        IEnumerator explodeleft()
+        {
+            explosion.SetActive(true);
+            explosionsound.Play();
+            yield return new WaitForSeconds(2.0f);
+            score.Play();
+            rightScore++;
+            explosion.SetActive(false);
+            resetBall("left");
         }
     }
 }
